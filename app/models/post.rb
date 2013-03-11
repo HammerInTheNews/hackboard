@@ -6,7 +6,10 @@ class Post < ActiveRecord::Base
   validates :link, presence: true,
   					#the part is regex "." is any character, * any number of times, + any character at least once, ? any char a single time or not
   					format:  /^http:\/\/.+\.com$/ 
+  validates :user, presence: true
+  
 
   has_many :comments
+  belongs_to :user
   
 end
