@@ -1,7 +1,11 @@
 class PostsController < ApplicationController
 
   def index
-  	@posts = Post.includes(:comments).all
+    if params[:user_id]
+      @posts = Post.where(user_id: params[:user_id]).includes(:comments)
+    else
+      @posts = Post.includes(:comments).all
+    end
   end
 
   def new
