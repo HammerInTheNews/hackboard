@@ -1,6 +1,13 @@
 Hackboard::Application.routes.draw do
 
   resources :posts do
+    #collection means, a group of posts based on a criterion
+    collection do
+      #GET displays, :mine is the route name, as: :my is explaining that you want it to say "my posts"
+      get :mine, as: :my
+    end 
+    #working with a particular post, use 'member do..''
+
     resources :comments
   end
 
