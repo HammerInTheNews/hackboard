@@ -1,5 +1,7 @@
 Hackboard::Application.routes.draw do
 
+  devise_for :users
+
   resources :posts do
     #collection means, a group of posts based on a criterion
     collection do

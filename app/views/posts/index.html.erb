@@ -3,7 +3,7 @@
 <ul><% @posts.each do |p| %>
   <li>
   	<div><%= p.description %></div>
-    <div>User: <%= p.user.name %></div>
+    <div>User: <%= p.user.email %></div>
     <div><%= link_to "Go!", p.link %></div>
 	  <ul>
 		  

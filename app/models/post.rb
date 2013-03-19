@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :description, :link
+  attr_accessible :description, :link, :name
 
   #validates with an 's' on the end.  then a ',' with what you want it to do
   validates :description, presence: true
