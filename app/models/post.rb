@@ -11,9 +11,10 @@ class Post < ActiveRecord::Base
   
   has_attached_file :avatar, styles: { thumb: '60x60#', small: '150x150>', large: '300x300', ugly: '666x666!' },
                      size: { :in => 0..1000.kilobytes },
+                                        storage: :s3,
                                         s3_credentials: {
                                         access_key_id: 'AKIAJNUSQQMYYELN5VZQ',
-                              secret_access_key: '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',
+                                        secret_access_key: 'eMBnD594xeGyLeLL3JBppN1sbvyROzEwrlivC6xQ',
                                         bucket: 'hackeryou'
                                        }
   
